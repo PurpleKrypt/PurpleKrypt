@@ -316,6 +316,30 @@
     -fx-content-display: center;
 }
 
+/* ---------- Mini Header Button ---------- */
+
+.header_button {
+    -fx-text-fill: #aaaaaa;
+    -fx-background-color:  #323232;
+    -fx-border-width: 1;
+    -fx-border-color: #aaaaaa;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-family: "Regular";
+    -fx-font-weight: bold;
+}
+
+.header_button: hover {
+    -fx-text-fill: #323232;
+    -fx-background-color:  #aaaaaa;
+    -fx-border-width: 1;
+    -fx-border-color: #aaaaaa;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-family: "Regular";
+    -fx-font-weight: bold;
+}
+
 /* ---------- Table ---------- */
 .table {
     -fx-background-color: transparent;

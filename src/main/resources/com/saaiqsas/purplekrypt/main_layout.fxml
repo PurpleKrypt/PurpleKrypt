@@ -411,11 +411,19 @@
                   <Insets bottom="10.0" />
                </padding>
                <HBox fx:id="input_data_box_header" alignment="CENTER_LEFT" minHeight="28.0" prefHeight="28.0" prefWidth="362.0" styleClass="layer1_box_header_background">
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="layer1_box_header" text="Input" HBox.hgrow="ALWAYS">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="layer1_box_header" text="Input" wrappingWidth="285.0" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Text>
+                  <Button fx:id="paste_to_clipboard_button" mnemonicParsing="false" onAction="#paste_to_clipboard_button_onAction" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 9px; -fx-font-weight: bold;" styleClass="header_button" text="Paste" textFill="#999999" HBox.hgrow="NEVER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="1.0" />
+                     </HBox.margin>
+                  </Button>
                </HBox>
                <StackPane prefHeight="340.0" prefWidth="334.0">
                   <VBox fx:id="input_text_box" alignment="TOP_CENTER" prefHeight="315.0" prefWidth="362.0" visible="false">
@@ -478,11 +486,19 @@
                      <Insets />
                   </StackPane.margin>
                   <HBox alignment="CENTER_LEFT" minHeight="28.0" prefHeight="28.0" prefWidth="362.0" styleClass="layer1_box_header_background">
-                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="layer1_box_header" text="Output" HBox.hgrow="ALWAYS">
+                     <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="layer1_box_header" text="Output" wrappingWidth="285.0" HBox.hgrow="ALWAYS">
                         <HBox.margin>
                            <Insets left="10.0" />
                         </HBox.margin>
                      </Text>
+                     <Button mnemonicParsing="false" onAction="#copy_to_clipboard_button_onAction" prefHeight="20.0" prefWidth="50.0" style="-fx-font-size: 9px; -fx-font-weight: bold;" styleClass="header_button" text="Copy" textFill="#999999">
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <HBox.margin>
+                           <Insets bottom="1.0" />
+                        </HBox.margin>
+                     </Button>
                   </HBox>
                   <VBox prefHeight="272.0" prefWidth="362.0" VBox.vgrow="ALWAYS">
                      <padding>

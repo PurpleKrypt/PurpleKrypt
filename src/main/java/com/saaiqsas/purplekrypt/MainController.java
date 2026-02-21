@@ -11,10 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -166,6 +163,7 @@ public class MainController implements Initializable {
     public Button output_copy_button;
     public Button output_move_button;
     public Button output_replace_button;
+    public Button paste_to_clipboard_button;
     public Rectangle output_method_rect;
 
 
@@ -957,6 +955,7 @@ public class MainController implements Initializable {
         output_file_box.setVisible(false);
         input_text_box.setVisible(true);
         output_text_box.setVisible(true);
+        paste_to_clipboard_button.setVisible(true);
 
         INPUT_TYPE = 0;
         
@@ -971,11 +970,30 @@ public class MainController implements Initializable {
         output_text_box.setVisible(false);
         input_file_box.setVisible(true);
         output_file_box.setVisible(true);
+        paste_to_clipboard_button.setVisible(false);
 
         INPUT_TYPE = 1;
     }
-    
 
+    // Input Text Buttons
+    @FXML
+    protected void copy_to_clipboard_button_onAction() {
+        if (!output_text_output_field.getText().isEmpty()) {
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(output_text_output_field.getText());
+            clipboard.setContent(content);
+            log("Copied to Clipboard",false);
+        }
+    }
+
+    @FXML
+    protected void paste_to_clipboard_button_onAction() {
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        if (clipboard.hasString()) {
+            input_text_input_field.setText(clipboard.getString());
+        }
+    }
 
     // Input File buttons
     @FXML
